@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About Us - Animora</title>
+  <link rel="icon" href="images/nicee.png" type="image/png">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Orbitron:wght@500&display=swap" rel="stylesheet" />
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html, body {
+      height: 100%;
+      width: 100%;
+      font-family: 'Orbitron', sans-serif;
+    }
+
+    body {
+      background-image: url("images/text.png");
+      background-color: #333;
+      background-size: cover;
+      background-position: center;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* ---- CURVED PURPLE BACKGROUND ---- */
+    .header-background {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 20vh;
+      background: radial-gradient(ellipse at top left, #000 30%, #57007F 80%);
+      border-bottom-left-radius: 30% 30%;
+      border-bottom-right-radius: 30% 30%;
+      z-index: 0;
+    }
+
+    /* ---- NAVBAR ---- */
+    .navbar {
+      position: relative;
+      width: 100%;
+      height: 300px;
+      padding: 3% 5%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      z-index: 2;
+      overflow: visible;
+    }
+
+    .navbar .logo {
+      font-family: 'Great Vibes', cursive;
+      font-size: 2em;
+      color: #fff;
+      flex: 1;
+      z-index: 2;
+    }
+
+    .navbar .nav-links {
+      flex: 2;
+      display: flex;
+      justify-content: center;
+      gap: 5%;
+      z-index: 2;
+    }
+
+    .navbar .nav-links a {
+      color: #fff;
+      text-decoration: none;
+      font-size: 1em;
+      position: relative;
+    }
+
+    .navbar .nav-links a.active::after {
+      content: '';
+      position: absolute;
+      bottom: -0.4em;
+      left: 0;
+      width: 100%;
+      height: 2px;
+      background: #fff;
+    }
+
+    .navbar .monster {
+      position: absolute;
+      top: -33px;
+      right: 40px;
+      z-index: 1;
+    }
+
+    .monster-image {
+      width: 100%;
+      max-width: 250px;
+      height: 250px;
+    }
+
+    /* ---- ABOUT SECTION ---- */
+    .about-container {
+      position: relative;
+      display: flex;
+      justify-content: space-between;
+      padding: 5% 10%;
+      gap: 4%;
+      z-index: 1;
+    }
+
+    .about-text {
+      flex: 1;
+      position: relative;
+      z-index: 1;
+      color: #fff;
+    }
+
+    .about-text h1 {
+      font-size: 2.5em;
+      margin-bottom: 1em;
+      border-bottom: 2px solid #fff;
+      display: inline-block;
+    }
+    .navbar .nav-links a.active:hover::after {
+  background: #c800ff78; /* desired hover underline color */
+}
+.nav-links a:hover {
+  color: #c800ff78;
+}
+    .about-text p {
+      font-size: 1.2em;
+      line-height: 1.8em;
+      margin-bottom: 1em;
+      margin-top: 3em;
+      margin-left: 5em;
+    }
+
+    .about-text .tagline {
+      font-family: 'Great Vibes', cursive;
+      font-size: 1.5em;
+      margin-top: 2em;
+      color: #c5c5c5;
+    }
+
+    .goku-image {
+      position: absolute;
+      top: -30px;
+      left: 20px;
+      width: 200px;
+      border-radius: 50%;
+    }
+
+    .luffy-image {
+      flex-shrink: 0;
+      width: 270px;
+      border-radius: 0.5em;
+    }
+
+    @media (max-width: 900px) {
+      .about-container {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+      }
+
+      .goku-image {
+        position: relative;
+        top: 0;
+        margin-bottom: 1em;
+      }
+
+      /* position it on the right end of screen */
+      .luffy-image {
+        position: absolute;
+        top: 150px;
+        margin-top: 1em;
+      }
+
+      .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1em;
+        height: auto;
+      }
+
+      .navbar .nav-links {
+        justify-content: flex-start;
+        flex-wrap: wrap;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Curved Header Background -->
+  <div class="header-background"></div>
+
+  <!-- NAVBAR -->
+  <nav class="navbar">
+    <div  ><a href="Animora.html" class="logo">Animora</a></div>
+    <div class="nav-links">
+      <a href="Animora.html">Home</a>
+      <a href="Shop.html">Shop</a>
+      <a href="About.html" class="active">About</a>
+      <a href="Contact.html">Contact</a>
+    </div>
+    <div class="monster">
+      <img src="images/monster.png" alt="Monster" class="monster-image" />
+    </div>
+  </nav>
+
+  <!-- About Section -->
+  <div class="about-container">
+    <img src="images/goku.png" alt="Goku" class="goku-image" />
+    <div class="about-text">
+        <p>At Animora, we fuse the bold world of anime with the edge of streetwear.
+        We're not just a brand, we're a tribe of dreamers, warriors, and main characters.</p>
+        <p class="tagline">Welcome to Animora. Wear your power.</p>
+    </div>
+    <h1 class="about-text" style="text-align: center;">About us</h1>
+    <img src="images/Luffy2.png" alt="Luffy" class="luffy-image" />
+  </div>
+
+</body>
+</html>
