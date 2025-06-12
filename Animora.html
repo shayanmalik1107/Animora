@@ -10,6 +10,7 @@
       rel="stylesheet"
     />
     <link rel="icon" href="images/nicee.png" type="image/png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
     <script
       src="https://kit.fontawesome.com/a076d05399.js"
@@ -647,6 +648,37 @@ height: 90%;
 .NAMES{
   margin-top: 20px;
 }
+/* By default, hide icons */
+.nav-icon {
+  display: none;
+}
+
+/* On smaller devices, hide text and show icons */
+@media (max-width: 768px) {
+  .nav-text {
+    display: none;
+  }
+
+  .nav-icon {
+    display: inline-block;
+    font-size: 20px;
+  }
+
+  .navbar .nav-links {
+    gap: 10px;
+  }
+}
+@media (max-width: 768px) {
+  .navbar {
+    padding: 3% 2%;
+  }
+
+  .signin-button {
+    padding: 10px 20px;
+    font-size: 14px;
+  }
+}
+
     </style>
   </head>
 
@@ -655,18 +687,32 @@ height: 90%;
 
     <!-- NAVBAR -->
     <nav class="navbar">
-    <div  ><a href="Animora.html" class="logo">Animora</a></div>
+      <div><a href="Animora.html" class="logo">Animora</a></div>
+    
       <div class="nav-links">
-        <a href="Animora.html" class="active" >Home</a>
-        <a href="Shop.html">Shop</a>
-        <a href="About.html">About</a>
-        <a href="Contact.html">Contact</a>
+        <a href="Animora.html" class="active">
+          <span class="nav-text">Home</span>
+          <i class="fas fa-home nav-icon"></i>
+        </a>
+        <a href="Shop.html">
+          <span class="nav-text">Shop</span>
+          <i class="fas fa-store nav-icon"></i>
+        </a>
+        <a href="About.html">
+          <span class="nav-text">About</span>
+          <i class="fas fa-info-circle nav-icon"></i>
+        </a>
+        <a href="Contact.html">
+          <span class="nav-text">Contact</span>
+          <i class="fas fa-envelope nav-icon"></i>
+        </a>
       </div>
+    
       <button class="signin-button" id="user-btn">Sign In</button>
+    
       <button id="toggleSidebar" style="margin-left: 20px; cursor: pointer; background: none; border: none;">
         <img src="images/slide.png" alt="Menu" style="width: 30px; height: 30px;" id="sidebarIcon" />
       </button>
-    
     </nav>
    <div id="sidebar" class="sidebar">
   <button id="closeSidebar" class="close-btn">&times;</button>
