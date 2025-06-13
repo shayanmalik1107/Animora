@@ -673,9 +673,38 @@ height: 90%;
     padding: 3% 2%;
   }
 
-  .signin-button {
-    padding: 10px 20px;
-    font-size: 14px;
+    .signin-button {
+    padding: 8px 16px;
+    font-size: 12px;
+  }
+}
+.logo-container {
+  display: flex;
+  align-items: center;
+}
+
+/* Show text logo by default */
+.logo-text {
+  font-family: "Great Vibes", cursive;
+  font-size: 2em;
+  color: #fff;
+  display: block;
+}
+
+.logo-image {
+  display: none;
+  width: 50px;
+  height: auto;
+}
+
+/* On small screens hide text logo and show image */
+@media (max-width: 768px) {
+  .logo-text {
+    display: none;
+  }
+
+  .logo-image {
+    display: block;
   }
 }
 
@@ -687,8 +716,11 @@ height: 90%;
 
     <!-- NAVBAR -->
     <nav class="navbar">
-      <div><a href="Animora.html" class="logo">Animora</a></div>
-    
+      <div class="logo-container">
+        <a href="Animora.html" class="logo-text">Animora</a>
+        <a href="Animora.html"><img src="images/nicee.png" alt="Animora Logo" class="logo-image"></a>
+      </div>
+          
       <div class="nav-links">
         <a href="Animora.html" class="active">
           <span class="nav-text">Home</span>
