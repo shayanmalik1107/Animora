@@ -66,10 +66,29 @@
         width: 100%;
         padding: 3% 5%;
         display: flex;
-        justify-content: space-between;
         align-items: center;
+        gap: 5px;
+
         z-index: 2;
       }
+@media (max-width: 768px) {
+  .navbar {
+    padding: 3% 2%;
+  }
+
+  .navbar .nav-links {
+    gap: 5px; /* Reduce gap between nav links on mobile */
+  }
+
+  .navbar {
+    gap: 5px; /* Reduce gap between nav links & Sign In button */
+  }
+
+  .signin-button {
+    padding: 8px 10px;
+    font-size: 12px;
+  }
+}
 
       .navbar .logo {
         font-family: "Great Vibes", cursive;
@@ -79,12 +98,18 @@
       }
 
       .navbar .nav-links {
-        flex: 2;
-        display: flex;
-        justify-content: center;
-        gap: 5%;
-      }
-
+  flex: 2;
+  display: flex;
+  justify-content: center;
+  gap: clamp(20px, 5vw, 40px);
+}
+/* For smaller screens */
+@media (max-width: 768px) {
+  .navbar .nav-links {
+    flex: 4;  /* increase flex grow factor */
+    gap: 30px; /* increase gap */
+  }
+}
       .navbar .nav-links a {
         color: #fff;
         text-decoration: none;
@@ -742,7 +767,7 @@ height: 90%;
     
       <button class="signin-button" id="user-btn">Sign In</button>
     
-      <button id="toggleSidebar" style="margin-left: 20px; cursor: pointer; background: none; border: none;">
+      <button id="toggleSidebar" style="margin-left: 5px; cursor: pointer; background: none; border: none;">
         <img src="images/slide.png" alt="Menu" style="width: 30px; height: 30px;" id="sidebarIcon" />
       </button>
     </nav>
