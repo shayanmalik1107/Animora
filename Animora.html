@@ -223,10 +223,10 @@
       }
 
       @media (max-width: 600px) {
-        .shop-section {
-          grid-template-columns: 1fr;
-        }
-      }
+  .shop-section {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
 
       .product-card {
         background: rgba(0, 0, 0, 0.8);
@@ -558,8 +558,11 @@
         }
 
         .footer-content {
-          flex-direction: column;
-          text-align: center;
+          flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    text-align: left; /* or keep center if you want text centered */
+    gap: 20px; /* optional: to give some breathing space */
         }
         .see-all-wrapper {
           text-align: center;
