@@ -741,6 +741,33 @@ height: 90%;
     margin-left: 0px; /* make sure sidebar opener is tight */
   }
 }
+@media (max-width: 768px) {
+  .navbar {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .logo-container {
+    flex: 1 1 100%;
+    display: flex;
+    align-items: center;
+  }
+
+  .nav-links {
+    flex-basis: 100%;
+    display: flex;
+    justify-content: space-around;
+    margin-top: 10px;
+  }
+
+  .nav-links a {
+    flex: 1;
+    text-align: center;
+  }
+}
+
 
     </style>
   </head>
