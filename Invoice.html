@@ -121,13 +121,54 @@
       background-color: #02ab51;
       color: white;
     }
+    @media (max-width: 768px) {
+  .brand-name {
+    font-size: 0; /* Hides text */
+  }
+
+  .brand-name::before {
+    content: "";
+    display: inline-block;
+    background-image: url('images/nicee.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 100px;
+    height: 40px;
+  }
+
+  .header h1 {
+    font-size: 28px; /* Smaller Invoice text */
+  }
+
+  .face-img {
+    height: 100px; /* Smaller monster image */
+    top: 0;
+  }
+  .scroll-box img {
+    
+    height: 100px !important;
+    padding: 5px !important;
+    margin: 5px !important;
+  }
+  .address {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 0 10px;
+    word-break: break-word;
+  }
+}
+
   </style>
 </head>
 
 <body>
   <div class="header">
-    <div class="brand-name"><a href="Animora.html" style="color: #ffffff;">Animora</a></div>
-    <h1>Invoice</h1>
+    <div class="brand-name-container">
+      <a href="Animora.html" class="brand-link">
+        <span class="brand-name">Animora</span>
+      </a>
+    </div> <h1>Invoice</h1>
     <img src="images/monster.png" class="face-img" alt="Face Icon" />
   </div>
   
