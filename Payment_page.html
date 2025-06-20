@@ -197,6 +197,70 @@ input[type="number"] {
   opacity: 0.5;
 }
 
+@media screen and (max-width: 768px) {
+  .card {
+    flex-direction: column;
+    padding: 20px;
+  }
+
+  .payment-section {
+    margin-left: 0;
+    text-align: center;
+  }
+
+  .payment-section h2 {
+    font-size: 22px;
+  }
+
+  .payment-icons {
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .payment-icons img {
+    height: 30px;
+    width: 45px;
+  }
+
+  .input-group {
+    flex-direction: column;
+    gap: 8px;
+    align-items: center;
+  }
+
+  .input-group input {
+    width: 80%;
+  }
+
+  .cash-toggle {
+    justify-content: center;
+    margin-top: 10px;
+  }
+
+  .confirm-btn {
+    margin-top: 30px;
+    font-size: 14px;
+    padding: 10px 24px;
+  }
+
+  .shirt-preview img {
+    max-height: 200px;
+  }
+
+  .face-icon {
+    height: 60px;
+    margin-top: 10px;
+    transform: scale(1.2);
+  }
+
+  .logo {
+    font-size: 28px;
+  }
+  .input-group span {
+    position: relative;
+    top: 6px;
+  }
+}
 
     </style>
   </head>
@@ -328,10 +392,6 @@ window.addEventListener("pageshow", (event) => {
     resetForm();
   }
 });
-    </script>
-    
-    
-    
-    
+    </script>  
   </body>
 </html>

@@ -202,6 +202,56 @@
   pointer-events: none; /* disables clicking */
 }
 
+.brand-logo-mobile {
+  display: none;
+  height: 50px;
+}
+
+/* Mobile styles */
+@media (max-width: 768px) {
+  .brand-name {
+    display: none;
+  }
+
+  .brand-logo-mobile {
+    display: inline-block;
+    height: 40px;
+    width: 40px;
+  }
+
+  .header h1 {
+    font-size: 40px; /* Smaller Cart text */
+  }
+
+  .monster {
+    height: 150px; /* Smaller monster */
+    top: 0px;
+    right: 0px;
+  }
+  .shirt-card {
+    padding: 25px;
+    height: 290px;
+  }
+
+  .shirt-card img {
+    height:180px;
+  }
+  .remove-btn {
+    padding: 8px;
+    font-size: 16px;
+  }
+  .select-more,
+.add-address {
+  padding: 9px 12px;
+  font-size: 10px;
+}.actions {
+ 
+  align-items: stretch;
+  gap: 40px;
+}
+
+
+}
 
     </style>
   </head>
@@ -209,8 +259,13 @@
     <div class="background">
       <img src="images/text.png" class="background-text" alt="Background Text" />
       <div class="nav-bar">
-        <span ><a class="brand-name" href="Animora.html">Animora</a></span>
-      
+        <span>
+          <a href="Animora.html">
+            <img src="images/nicee.png" class="brand-logo-mobile" alt="Animora Logo" />
+            <span class="brand-name">Animora</span>
+          </a>
+        </span>
+              
         <div class="header">
           <h1>Cart</h1>
         </div>
@@ -304,8 +359,16 @@
             };
       
             card.appendChild(img);
-            card.appendChild(price);
-            card.appendChild(removeBtn);
+card.appendChild(price);
+
+// Wrap remove button in a container for spacing
+const removeContainer = document.createElement("div");
+removeContainer.style.display = "flex";
+removeContainer.style.justifyContent = "center";
+removeContainer.style.marginTop = "10px";
+removeContainer.appendChild(removeBtn);
+
+card.appendChild(removeContainer);
             scrollBox.appendChild(card);
           });
         }

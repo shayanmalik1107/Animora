@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Contact - Animora</title>
   <link rel="icon" href="images/nicee.png" type="image/png">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Orbitron:wght@500&display=swap" rel="stylesheet" />
@@ -46,68 +47,148 @@
       z-index: 0;
     }
 
-    .navbar {
-      position: relative;
-      width: 100%;
-      height: 300px;
-      padding: 3% 5%;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      z-index: 2;
-      overflow: visible;
-    }
-
-    .navbar .logo {
-      font-family: 'Great Vibes', cursive;
-      font-size: 2em;
-      color: #fff;
-      flex: 1;
-      z-index: 2;
-    }
-
-    .navbar .nav-links {
-      flex: 2;
-      display: flex;
-      justify-content: center;
-      gap: 5%;
-      z-index: 2;
-    }
-
-    .navbar .nav-links a {
-      color: #fff;
-      text-decoration: none;
-      font-size: 1em;
-      position: relative;
-    }
-
-    .navbar .nav-links a.active::after {
-      content: '';
-      position: absolute;
-      bottom: -0.4em;
-      left: 0;
-      width: 100%;
-      height: 2px;
-      background: #fff;
-    }
-    .navbar .nav-links a.active:hover::after {
-  background: #c800ff78; /* desired hover underline color */
+    .logo-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
 }
+
+.logo-text {
+  font-family: "Great Vibes", cursive;
+  font-size: 2em;
+  color: #fff;
+  display: block;
+}
+
+.logo-image {
+  display: none;
+  width: 30px;
+  height: 30px;
+}
+
+.navbar {
+  position: relative;
+  width: 100%;
+  padding: 3% 5%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 2;
+}
+
+.nav-links {
+  flex: 2;
+  display: flex;
+  justify-content: center;
+  gap: 5%;
+  z-index: 2;
+}
+
+.nav-links a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 1em;
+  position: relative;
+}
+
+.nav-links a.active::after {
+  content: '';
+  position: absolute;
+  bottom: -0.4em;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: #fff;
+}
+
 .nav-links a:hover {
   color: #c800ff78;
 }
-    .navbar .monster {
-      position: absolute;
-      top: -33px;
-      right: 40px;
-      z-index: 1;
-    }
 
-    .monster-image {
-      width: 100%;
-      max-width: 250px;
-      height: 250px;
-    }
+.monster {
+  position: absolute;
+  top: -33px;
+  right: 40px;
+  z-index: 1;
+}
+
+.monster-image {
+  width: 100%;
+  max-width: 250px;
+  height: 250px;
+}
+
+/* ----- MOBILE RESPONSIVE STYLES ----- */
+@media (max-width: 900px) {
+  .logo-text {
+    display: none;
+  }
+
+  .logo-image {
+    display: inline;
+  }
+
+  .nav-links {
+    margin-right: 30px;
+  }
+
+  .nav-links a {
+    position: relative;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+  }
+
+  .nav-links a span {
+    display: none;
+  }
+
+  .nav-links a::before {
+    font-family: "Font Awesome 6 Free";
+    font-weight: 900;
+    font-size: 26px;
+    color: white;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  .nav-links a[href="Animora.html"]::before {
+    content: "\f015"; /* fa-house */
+  }
+
+  .nav-links a[href="Shop.html"]::before {
+    content: "\f54e"; /* fa-store */
+  }
+
+  .nav-links a[href="About.html"]::before {
+    content: "\f05a"; /* fa-circle-info */
+  }
+
+  .nav-links a[href="Contact.html"]::before {
+    content: "\f0e0"; /* fa-envelope */
+  }
+
+  .monster {
+    top: 0;
+    right: 0;
+    transform: translate(0, 0);
+  }
+
+  .monster-image {
+    width: 100px;
+    height: auto;
+  }
+
+  .nav-links a.active {
+    border-bottom: 2px solid white;
+    padding-bottom: 4px;
+  }
+}
 
     .main-container {
       flex: 1;
@@ -235,12 +316,7 @@
     }
 
     @media (max-width: 900px) {
-      .navbar {
-        flex-direction: column;
-        align-items: flex-start;
-        height: auto;
-      }
-
+    
       .contact-section {
         flex-direction: column;
         align-items: center;
@@ -254,6 +330,10 @@
         margin-bottom: 2em;
       }
     }
+  
+
+
+
   </style>
 </head>
 <body>
@@ -261,18 +341,24 @@
   <div class="header-background"></div>
 
   <!-- NAVBAR -->
-  <nav class="navbar">
-    <div  ><a href="Animora.html" class="logo">Animora</a></div>
-    <div class="nav-links">
-      <a href="Animora.html">Home</a>
-      <a href="Shop.html">Shop</a>
-      <a href="About.html">About</a>
-      <a href="Contact.html" class="active">Contact</a>
-    </div>
-    <div class="monster">
-      <img src="images/monster.png" alt="Monster" class="monster-image" />
-    </div>
-  </nav>
+ <!-- NAVBAR -->
+<nav class="navbar">
+  <div class="logo-container">
+    <a href="Animora.html" class="logo-text">Animora</a>
+    <a href="Animora.html"><img src="images/nicee.png" alt="Animora Logo" class="logo-image"></a>
+  </div>
+  <div class="nav-links">
+    <a href="Animora.html"><span>Home</span></a>
+    <a href="Shop.html"><span>Shop</span></a>
+    <a href="About.html"><span>About</span></a>
+    <a href="Contact.html" class="active"><span>Contact</span></a>
+  </div>
+  <div class="monster">
+    <img src="images/monster.png" alt="Monster" class="monster-image" />
+  </div>
+</nav>
+
+  
 
   <!-- SUGURU CHARACTER -->
   <div class="suguru-character">

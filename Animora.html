@@ -10,6 +10,7 @@
       rel="stylesheet"
     />
     <link rel="icon" href="images/nicee.png" type="image/png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
     <script
       src="https://kit.fontawesome.com/a076d05399.js"
@@ -65,10 +66,29 @@
         width: 100%;
         padding: 3% 5%;
         display: flex;
-        justify-content: space-between;
         align-items: center;
+        gap: 5px;
+
         z-index: 2;
       }
+@media (max-width: 768px) {
+  .navbar {
+    padding: 3% 2%;
+  }
+
+  .navbar .nav-links {
+    gap: 20px; /* Increased gap between Home, Shop, About, Contact */
+  }
+
+  .navbar {
+    gap: 5px; /* Reduce gap between nav links & Sign In button */
+  }
+
+  .signin-button {
+    padding: 8px 10px;
+    font-size: 12px;
+  }
+}
 
       .navbar .logo {
         font-family: "Great Vibes", cursive;
@@ -78,12 +98,18 @@
       }
 
       .navbar .nav-links {
-        flex: 2;
-        display: flex;
-        justify-content: center;
-        gap: 5%;
-      }
-
+  flex: 2;
+  display: flex;
+  justify-content: center;
+  gap: clamp(20px, 5vw, 40px);
+}
+/* For smaller screens */
+@media (max-width: 768px) {
+  .navbar .nav-links {
+    flex: 4;  /* increase flex grow factor */
+    gap: 30px; /* increase gap */
+  }
+}
       .navbar .nav-links a {
         color: #fff;
         text-decoration: none;
@@ -197,10 +223,10 @@
       }
 
       @media (max-width: 600px) {
-        .shop-section {
-          grid-template-columns: 1fr;
-        }
-      }
+  .shop-section {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
 
       .product-card {
         background: rgba(0, 0, 0, 0.8);
@@ -532,8 +558,11 @@
         }
 
         .footer-content {
-          flex-direction: column;
-          text-align: center;
+          flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    text-align: left; /* or keep center if you want text centered */
+    gap: 20px; /* optional: to give some breathing space */
         }
         .see-all-wrapper {
           text-align: center;
@@ -588,7 +617,7 @@ li.no-underline a::after {
   box-shadow: -2px 0 5px rgba(0,0,0,0.5);
 }
 .sidebar-content{
-height: 90%;
+height: 30%;
 }
 .sidebar.open {
   width: 300px;
@@ -647,6 +676,103 @@ height: 90%;
 .NAMES{
   margin-top: 20px;
 }
+/* By default, hide icons */
+.nav-icon {
+  display: none;
+}
+
+/* On smaller devices, hide text and show icons */
+@media (max-width: 768px) {
+  .nav-text {
+    display: none;
+  }
+
+  .nav-icon {
+    display: inline-block;
+    font-size: 20px;
+  }
+
+  .navbar .nav-links {
+    gap: 10px;
+  }
+}
+@media (max-width: 768px) {
+  .navbar {
+    padding: 3% 2%;
+  }
+
+    .signin-button {
+    padding: 8px 16px;
+    font-size: 12px;
+  }
+}
+.logo-container {
+  display: flex;
+  align-items: center;
+}
+
+/* Show text logo by default */
+.logo-text {
+  font-family: "Great Vibes", cursive;
+  font-size: 2em;
+  color: #fff;
+  display: block;
+}
+
+.logo-image {
+  display: none;
+  width: 30px;
+  height: 30px;
+}
+
+/* On small screens hide text logo and show image */
+@media (max-width: 768px) {
+  .logo-text {
+    display: none;
+  }
+
+  .logo-image {
+    display: block;
+    margin-left: 17px;
+  }
+}
+@media (max-width: 768px) {
+  .signin-button {
+    margin-right: 5px; /* make the Sign In button closer to sidebar */
+  }
+
+  #toggleSidebar {
+    margin-left: 0px; /* make sure sidebar opener is tight */
+  }
+}
+@media (max-width: 768px) {
+  .navbar {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .logo-container {
+    flex: 1 1 100%;
+    display: flex;
+    align-items: center;
+  }
+
+  .nav-links {
+    flex-basis: 100%;
+    display: flex;
+    justify-content: space-around;
+    margin-top: 10px;
+  }
+
+  .nav-links a {
+    flex: 1;
+    text-align: center;
+  }
+}
+
+
     </style>
   </head>
 
@@ -655,18 +781,35 @@ height: 90%;
 
     <!-- NAVBAR -->
     <nav class="navbar">
-    <div  ><a href="Animora.html" class="logo">Animora</a></div>
-      <div class="nav-links">
-        <a href="Animora.html" class="active" >Home</a>
-        <a href="Shop.html">Shop</a>
-        <a href="About.html">About</a>
-        <a href="Contact.html">Contact</a>
+      <div class="logo-container">
+        <a href="Animora.html" class="logo-text">Animora</a>
+        <a href="Animora.html"><img src="images/nicee.png" alt="Animora Logo" class="logo-image"></a>
       </div>
+          
+      <div class="nav-links">
+        <a href="Animora.html" class="active">
+          <span class="nav-text">Home</span>
+          <i class="fas fa-home nav-icon"></i>
+        </a>
+        <a href="Shop.html">
+          <span class="nav-text">Shop</span>
+          <i class="fas fa-store nav-icon"></i>
+        </a>
+        <a href="About.html">
+          <span class="nav-text">About</span>
+          <i class="fas fa-info-circle nav-icon"></i>
+        </a>
+        <a href="Contact.html">
+          <span class="nav-text">Contact</span>
+          <i class="fas fa-envelope nav-icon"></i>
+        </a>
+      </div>
+    
       <button class="signin-button" id="user-btn">Sign In</button>
-      <button id="toggleSidebar" style="margin-left: 20px; cursor: pointer; background: none; border: none;">
+    
+      <button id="toggleSidebar" style="cursor: pointer; background: none; border: none;">
         <img src="images/slide.png" alt="Menu" style="width: 30px; height: 30px;" id="sidebarIcon" />
       </button>
-    
     </nav>
    <div id="sidebar" class="sidebar">
   <button id="closeSidebar" class="close-btn">&times;</button>
